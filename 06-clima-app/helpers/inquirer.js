@@ -63,13 +63,13 @@ const leerInput = async(mensaje) =>{
     return descripcion;
 }
 
-const listadoTareasPorBorrar = async(tareas = []) =>{
-    const choices = tareas.map((tarea, i) => {
+const listarLugares = async(lugares = []) =>{
+    const choices = lugares.map((lugar, i) => {
 
         const idx = `${i + 1}.`.green;
         return {
-            value: tarea.id,
-            name: `${ idx } ${ tarea.description }`
+            value: lugar.id,
+            name: `${ idx } ${ lugar.nombre }`
         }
     });
 
@@ -82,7 +82,7 @@ const listadoTareasPorBorrar = async(tareas = []) =>{
         {
             type: 'list',
             name: 'id',
-            message: 'Borrar',
+            message: 'Seleccione lugar:',
             choices
         }
     ];
@@ -136,7 +136,7 @@ module.exports = {
     inquirerMwenu,
     pausa,
     leerInput,
-    listadoTareasPorBorrar,
+    listarLugares,
     confirmar,
     mostrarListadoCheckList
 }
